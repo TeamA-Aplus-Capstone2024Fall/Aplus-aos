@@ -35,6 +35,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             Aplus_AOSTheme {
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+//                    WebViewScreen("http://192.168.1.113:3000")
                     WebViewScreen("https://skku-aplus-web.vercel.app/")
                 }
             }
@@ -64,33 +65,8 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun WebViewPreview() {
         Aplus_AOSTheme {
+//            WebViewScreen("http://192.168.1.113:3000")
             WebViewScreen("https://skku-aplus-web.vercel.app/")
         }
     }
 }
-
-//@Composable
-//fun WebViewScreen(url: String) {
-//    AndroidView(
-//        factory = { context ->
-//            WebView(context).apply {
-//                settings.javaScriptEnabled = true
-//                webViewClient = object: WebViewClient() {
-//                    override fun onPageFinished(view: WebView?, url: String?) {
-//                        super.onPageFinished(view, url)
-//                    }
-//                }
-//                loadUrl(url)
-//            }
-//        },
-//        modifier = Modifier.fillMaxSize()
-//    )
-//}
-
-//@Preview(showBackground = true)
-//@Composable
-//fun WebViewPreview() {
-//    Aplus_AOSTheme {
-//        WebViewScreen("https://skku-aplus-web.vercel.app/")
-//    }
-//}

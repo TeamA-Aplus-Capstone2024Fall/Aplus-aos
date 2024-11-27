@@ -43,8 +43,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.example.cameraapplication.CameraActivity" android:theme="@style/Theme.AppCompat.Light" />
-
     </application>
 
 </manifest>

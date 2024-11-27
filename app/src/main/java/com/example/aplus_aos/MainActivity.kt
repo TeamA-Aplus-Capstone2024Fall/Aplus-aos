@@ -1,7 +1,6 @@
 package com.example.aplus_aos
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -13,22 +12,11 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.activity.ComponentActivity
-import androidx.appcompat.app.AppCompatActivity
-import androidx.activity.OnBackPressedCallback
-import androidx.activity.compose.setContent
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import com.example.aplus_aos.ui.theme.Aplus_AOSTheme
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.MediaType.Companion.toMediaType
@@ -63,8 +51,8 @@ class MainActivity : ComponentActivity() {
                 return true // true를 반환하면 새 창이 열리지 않음
             }
         }
-//        webView.loadUrl("https://skku-aplus-web.vercel.app/")
-        webView.loadUrl("http://192.168.1.113:3000")
+        webView.loadUrl("https://skku-aplus-web.vercel.app/")
+//        webView.loadUrl("http://192.168.1.113:3000")
 
         takePictureLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->

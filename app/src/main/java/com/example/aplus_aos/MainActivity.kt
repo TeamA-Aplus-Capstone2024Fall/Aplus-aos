@@ -169,11 +169,13 @@ class MainActivity : ComponentActivity() {
                         val jsonObject = JSONObject(it)
                         val productName = jsonObject.getString("product_name")
                         val expirationDate = jsonObject.getString("expiration_date")
+                        val storageOptions = listOf("상온", "실온", "냉장", "냉동")
+                        val storageMethod = storageOptions.find { expirationDate.contains(it)} ?: ""
                         println("Product Name: $productName")
 
                         runOnUiThread {
                             webView.evaluateJavascript(
-                                "javascript:handleProductInfo('$productName', '$expirationDate');",
+                                "javascript:handleProductInfo('$productName', '$storageMethod');",
                                 null
                             )
                         }
